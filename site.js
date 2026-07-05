@@ -83,7 +83,7 @@
       foot_tagline: "L'application qui libère<br>vos photos de l'oubli",
       foot_product: 'Produit', foot_plan: 'Plan', foot_company: 'À propos', foot_dl: 'Télécharger',
       foot_privacy: 'Confidentialité', foot_terms: 'Conditions', foot_contact: 'Contact',
-      foot_copy: '© 2026 <a href="https://www.fluxart.fr">FluXart</a> — Conçu avec soin pour Android.', foot_made: 'Conçu avec soin pour Android.',
+      foot_copy: '© 2026 FluXart Studio — Conçu avec soin pour Android.', foot_made: 'Conçu avec soin pour Android.',
       faq: [
         ['LiberTag déplace-t-il mes photos ?', "Non. LiberTag lit vos photos là où elles sont déjà — pellicule, albums, dossiers. Vos images ne sont copiées ou déplacées qu'à votre seule initiative dans l'application."],
         ['Mes photos sont-elles envoyées sur un serveur ?', "LiberTag ne gère aucun serveur externe. Tout reste dans votre téléphone.<br />Vous serez ultérieurement informé(e) si nous mettons en place un système de sauvegarde sur le cloud."],
@@ -170,7 +170,7 @@
       foot_tagline: 'The app that frees<br>your photos from oblivion',
       foot_product: 'Product', foot_plan: 'Sitemap', foot_company: 'About', foot_dl: 'Download',
       foot_privacy: 'Privacy', foot_terms: 'Terms', foot_contact: 'Contact',
-      foot_copy: '© 2026 <a href="https://www.fluxart.fr">FluXart</a> — Crafted with care for Android.', foot_made: 'Crafted with care for Android.',
+      foot_copy: '© 2026 FluXart Studio — Crafted with care for Android.', foot_made: 'Crafted with care for Android.',
       faq: [
         ['Does LiberTag move my photos?', 'No. LiberTag reads your photos right where they already are — camera roll, albums, folders. Your images are only ever copied or moved when you choose to, inside the app.'],
         ['Are my photos sent to a server?', 'LiberTag runs no external server. Everything stays on your phone.<br />You\u2019ll be notified later on if we ever add a cloud backup system.'],
