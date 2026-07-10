@@ -259,6 +259,299 @@
   </div>
 </section>
 
+<!-- ============================ PROBLÈME DES ALBUMS CLASSIQUES ============================ -->
+<section class="band band-seam" id="probleme-albums">
+  <style>
+    /* ---- layout ---- */
+    #probleme-albums .pbm-stage{
+      margin-top:clamp(40px,6vw,72px);
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:clamp(28px,4vw,56px);
+      align-items:center;
+      position:relative;
+    }
+
+    /* ---- album card ---- */
+    .pbm-album{
+      position:relative;
+      background:linear-gradient(180deg,#1F1816,#271E1B);
+      border:1px solid rgba(226,192,121,.16);
+      border-radius:22px;
+      padding:20px 20px 22px;
+      box-shadow:0 30px 80px -40px rgba(0,0,0,.9), inset 0 1px 0 rgba(226,192,121,.05);
+    }
+    .pbm-album-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:2px 4px 16px;
+      border-bottom:1px solid rgba(226,192,121,.16);
+      margin-bottom:16px;
+    }
+    .pbm-album-title{
+      font-family:var(--ui,'Quicksand',system-ui,sans-serif);
+      font-weight:900;
+      font-size:clamp(17px,2.2vw,22px);
+      letter-spacing:-.01em;
+      color:#F0E1C8;
+      display:flex;align-items:center;gap:10px;
+    }
+    .pbm-album-title svg{width:20px;height:20px;flex:none}
+    .pbm-album-count{
+      font-size:11px;
+      letter-spacing:.12em;
+      color:#CBB59A;
+      white-space:nowrap;
+    }
+    .pbm-album-count b{color:#E2C079;font-weight:600}
+
+    .pbm-mosaic{
+      display:grid;
+      grid-template-columns:repeat(16,1fr);
+      gap:4px;
+    }
+    @media (max-width:640px){ .pbm-mosaic{grid-template-columns:repeat(12,1fr)} }
+    .pbm-tile{
+      aspect-ratio:1;
+      border-radius:3px;
+      position:relative;
+      opacity:.9;
+    }
+    /* la photo cible */
+    .pbm-tile.target{
+      outline:2px solid #D4A24A;
+      outline-offset:2px;
+      border-radius:4px;
+      opacity:1;
+      z-index:3;
+      box-shadow:0 0 0 4px rgba(212,162,74,.18), 0 8px 26px -6px rgba(212,162,74,.5);
+      animation:pbmPulse 2.6s ease-in-out infinite;
+    }
+    .pbm-tile.target::after{
+      content:"";
+      position:absolute;inset:0;
+      border-radius:3px;
+      background:
+        linear-gradient(135deg, rgba(226,192,121,.35), transparent 60%),
+        repeating-linear-gradient(45deg, rgba(21,16,15,.25) 0 3px, transparent 3px 6px);
+    }
+    @keyframes pbmPulse{
+      0%,100%{box-shadow:0 0 0 4px rgba(212,162,74,.14),0 8px 26px -6px rgba(212,162,74,.4)}
+      50%{box-shadow:0 0 0 7px rgba(212,162,74,.05),0 10px 30px -6px rgba(212,162,74,.65)}
+    }
+
+    /* ---- colonne question / réponse ---- */
+    .pbm-ask{position:relative;z-index:2}
+    .pbm-question{
+      font-family:var(--serif,'Spectral',Georgia,serif);
+      font-weight:500;
+      font-style:italic;
+      font-size:clamp(26px,3.6vw,42px);
+      line-height:1.08;
+      color:#F0E1C8;
+      margin:0 0 6px;
+    }
+    .pbm-question b{font-style:normal;font-weight:600;color:#E2C079}
+
+    .pbm-answer{
+      margin-top:26px;
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+    }
+    .pbm-answer-arrow{
+      color:#D4A24A;
+      font-size:22px;
+      line-height:1;
+      margin-top:4px;
+    }
+    .pbm-answer-body .pbm-label{
+      font-size:11px;
+      letter-spacing:.24em;
+      text-transform:uppercase;
+      color:#B68536;
+      margin:0 0 6px;
+    }
+    .pbm-answer-body .pbm-text{
+      font-family:var(--ui,'Quicksand',system-ui,sans-serif);
+      font-weight:800;
+      font-size:clamp(19px,2.4vw,26px);
+      color:#F0E1C8;
+      margin:0 0 16px;
+      line-height:1.2;
+    }
+    .pbm-answer-body .pbm-text em{color:#D4A24A;font-style:normal}
+
+    .pbm-tags{display:flex;flex-wrap:wrap;gap:8px}
+    .pbm-tag{
+      font-family:var(--ui,'Quicksand',system-ui,sans-serif);
+      font-weight:700;
+      font-size:13px;
+      color:#F0E1C8;
+      background:rgba(212,162,74,.09);
+      border:1px solid rgba(212,162,74,.3);
+      border-radius:999px;
+      padding:6px 13px 6px 10px;
+      display:inline-flex;align-items:center;gap:7px;
+    }
+    .pbm-tag::before{
+      content:"";
+      width:7px;height:7px;border-radius:50%;
+      background:var(--dot,#D4A24A);
+      box-shadow:0 0 0 3px rgba(212,162,74,.12);
+    }
+
+    /* ---- flèche de liaison (overlay svg) ---- */
+    .pbm-link-arrow{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      z-index:1;
+      overflow:visible;
+    }
+    .pbm-link-arrow path{
+      fill:none;
+      stroke:#D4A24A;
+      stroke-width:2;
+      stroke-linecap:round;
+      stroke-dasharray:6 7;
+      opacity:.85;
+    }
+    .pbm-link-arrow .head{stroke-dasharray:none;stroke-width:2}
+    @media (max-width:860px){ .pbm-link-arrow{display:none} }
+
+    @media (max-width:860px){
+      #probleme-albums .pbm-stage{grid-template-columns:1fr}
+      .pbm-ask{order:-1}
+    }
+  </style>
+
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow center"><span data-i18n="pbm_eyebrow">L'aiguille dans la botte de foin</span></p>
+      <h2 class="section-title" data-i18n-html="pbm_title">La limite des <em>albums classiques</em></h2>
+      <p class="lead" data-i18n="pbm_lead">Débusquer des photos précises dans un album bien rempli peut vite devenir une chasse au trésor agaçante et chronophage.</p>
+    </div>
+
+    <div class="pbm-stage reveal">
+
+      <!-- flèche de liaison question -> photo cible -->
+      <svg class="pbm-link-arrow" preserveAspectRatio="none" aria-hidden="true"></svg>
+
+      <!-- ALBUM -->
+      <div class="pbm-album">
+        <div class="pbm-album-head">
+          <div class="pbm-album-title">
+            <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M1.6 3.2h4.1l1.1 1.3h2.9a.9.9 0 0 1 .9.9v3.6a.9.9 0 0 1-.9.9H1.6a.9.9 0 0 1-.9-.9V4.1a.9.9 0 0 1 .9-.9Z" stroke="#D4A24A" stroke-width=".8"/>
+            </svg>
+            <span data-i18n="pbm_album_title">Mon super album</span>
+          </div>
+          <div class="pbm-album-count"><b id="pbmCount">247</b> <span data-i18n="pbm_photos">photos</span></div>
+        </div>
+        <div class="pbm-mosaic" id="pbmMosaic"></div>
+      </div>
+
+      <!-- QUESTION / RÉPONSE -->
+      <div class="pbm-ask">
+        <p class="pbm-question" data-i18n-html="pbm_question">Comment retrouver <b>cette</b> photo, précisément&nbsp;?</p>
+
+        <div class="pbm-answer">
+          <div class="pbm-answer-arrow">→</div>
+          <div class="pbm-answer-body">
+            <p class="pbm-label" data-i18n="pbm_label">La réponse LiberTag</p>
+            <p class="pbm-text" data-i18n-html="pbm_text">Lui attribuer des <em>tags</em>.</p>
+            <div class="pbm-tags">
+              <span class="pbm-tag" style="--dot:#D4A24A" data-i18n="pbm_tag1">Coucher de soleil</span>
+              <span class="pbm-tag" style="--dot:#8FA68F" data-i18n="pbm_tag2">Bretagne</span>
+              <span class="pbm-tag" style="--dot:#A23E55">Léa</span>
+              <span class="pbm-tag" style="--dot:#E2C079" data-i18n="pbm_tag4">Été 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    const mosaic = document.getElementById('pbmMosaic');
+    const COLS = window.matchMedia('(max-width:640px)').matches ? 12 : 16;
+    const ROWS = 12;
+    const TOTAL = COLS * ROWS;
+
+    // teintes chocolat/or déterministes (pas de Math.random pour rester stable)
+    const hues = [
+      ['#2A211C','#3A2A20'], ['#3A2A20','#4A3826'], ['#4A3826','#5C4526'],
+      ['#5C4526','#6E521F'], ['#6E521F','#8A6A2B'], ['#8A6A2B','#B68536'],
+      ['#211A16','#332720'], ['#463222','#6B4E27'], ['#7A5C28','#A8802F']
+    ];
+    let seed = 7;
+    const rnd = () => (seed = (seed*9301+49297) % 233280) / 233280;
+
+    // position de la photo cible (comme le croquis : vers le centre-droit)
+    const targetIdx = 5*COLS + Math.floor(COLS*0.62);
+
+    for(let i=0;i<TOTAL;i++){
+      const t = document.createElement('div');
+      t.className = 'pbm-tile';
+      if(i === targetIdx){
+        t.classList.add('target');
+      }else{
+        const pair = hues[Math.floor(rnd()*hues.length)];
+        const ang = 90 + Math.floor(rnd()*120);
+        t.style.background = `linear-gradient(${ang}deg, ${pair[0]}, ${pair[1]})`;
+        t.style.opacity = (0.72 + rnd()*0.28).toFixed(2);
+      }
+      mosaic.appendChild(t);
+    }
+    document.getElementById('pbmCount').textContent = TOTAL;
+
+    // ---- trace la flèche manuscrite de la question vers la photo cible ----
+    function drawArrow(){
+      const svg = document.querySelector('#probleme-albums .pbm-link-arrow');
+      const stage = document.querySelector('#probleme-albums .pbm-stage');
+      const target = mosaic.querySelector('.target');
+      const arrowStart = document.querySelector('#probleme-albums .pbm-answer-arrow');
+      if(!svg || !target || !stage || !arrowStart) return;
+      const sb = stage.getBoundingClientRect();
+      const tb = target.getBoundingClientRect();
+      const ab = arrowStart.getBoundingClientRect();
+
+      svg.setAttribute('viewBox', `0 0 ${sb.width} ${sb.height}`);
+      svg.setAttribute('width', sb.width);
+      svg.setAttribute('height', sb.height);
+
+      // départ : à gauche de la colonne question, hauteur de "→"
+      const x1 = ab.left - sb.left - 10;
+      const y1 = ab.top - sb.top + ab.height/2;
+      // arrivée : bord droit de la photo cible
+      const x2 = tb.right - sb.left + 10;
+      const y2 = tb.top - sb.top + tb.height/2;
+
+      const cx1 = x1 - (x1-x2)*0.45;
+      const cy1 = y1 + 6;
+      const cx2 = x2 + (x1-x2)*0.15;
+      const cy2 = y2 - 30;
+
+      const d = `M ${x1},${y1} C ${cx1},${cy1} ${cx2},${cy2} ${x2},${y2}`;
+      // pointe de flèche
+      const head = `M ${x2+9},${y2-6} L ${x2},${y2} L ${x2+9},${y2+7}`;
+      svg.innerHTML =
+        `<path d="${d}"></path>` +
+        `<path class="head" d="${head}" style="stroke-dasharray:none"></path>`;
+    }
+
+    drawArrow();
+    window.addEventListener('resize', drawArrow);
+    window.addEventListener('load', drawArrow);
+  })();
+  </script>
+</section>
+
 <!-- ============================ TAG SYSTEM (cream) ============================ -->
 <section class="band band-cream band-seam" id="tags">
   <div class="wrap">
