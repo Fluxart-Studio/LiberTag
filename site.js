@@ -7,129 +7,8 @@
   /* ---------------------------------------------------- i18n dictionary */
   const I18N = {
     fr: {
-      nav_system: 'Le Système', nav_example: 'Exemples', nav_import: 'Import-Export', nav_features: 'Fonctionnalités', nav_tags: 'Les tags', nav_pricing: 'Tarifs', nav_faq: 'FAQ', nav_cta: 'Télécharger',
-      hero_eyebrow: 'Étiquetage photo avancé',
-      hero_title: 'Vos souvenirs,<br />à <em>chérir</em>.',
-      hero_lead: "N'entassez plus vos milliers d'images en vrac.<br />Faites-en une bibliothèque vivante et retrouvez chaque photo en un clin d'oeil.<br />L'application qui libère enfin vos photos de l'oubli.",
-      compat_label: 'Étiquettes compatibles avec',
-      badge_small: 'Disponible sur', hero_secondary: "Voir l'app",
-      hero_note: '4,8 — « Je retrouve enfin les photos de mes enfants »',
-      phone_micro: '5064 images · 3 sources', phone_micro2: '12 albums · 5064 images', phone_title: 'Sources Activées',
-      phone_lib: 'Photothèque', phone_gal: 'Galeries',
-      tab_pers: 'Pers.', tab_lieu: 'Lieu', tab_even: 'Évèn.', tab_theme: 'Thème', tab_divers: 'Divers',
-      seg_all: 'Tout', seg_albums: 'Albums', seg_fav: 'Étoiles',
-      demo_eyebrow: "L'app en images", demo_title: 'Pensée pour la mémoire de famille',
-      demo_lead: "Une galerie sombre et chaleureuse, des étiquettes claires, un geste pour tout retrouver. Voici LiberTag, écran par écran.",
-      demo1_t: 'Toutes vos sources, réunies', demo1_p: "Pellicule, albums, captures : LiberTag rassemble vos images sans les déplacer.",
-      demo2_t: 'Étiquetez en un geste', demo2_p: "L'IA propose, vous validez. Le bon tag se pose sur la photo en une touche.",
-      demo3_t: 'Cinq familles de tags', demo3_p: "Personnes, lieux, évènements, thèmes… chaque tag trouve naturellement sa catégorie.",
-      editag_ai: 'Suggestions IA', editag_posed: 'Tags posés', newtag_title: 'Nouveau tag', newtag_cat: 'Catégorie',
-      feat_eyebrow: 'Plaisir des retrouvailles', feat_title: "Revoir ses photos n'a jamais été aussi utile — ni aussi amusant.", feat_lead: "Prenez-vous au jeu de l'étiquetage de souvenirs,<br />puis créez d'exceptionnels albums en un rien de temps.",
-      f1_t: 'Étiquetage assisté', f1_p: 'Des suggestions de tags apparaissent sous chaque photo. Un coup d\u2019œil, une touche, c\u2019est rangé.',
-      f2_t: 'Tags parents', f2_p: '« Mamie » sous « Famille Halimi ». Une hiérarchie douce qui suit la logique de vos souvenirs.',
-      f3_t: 'Plusieurs sources', f3_p: 'Pellicule, albums, scans, captures — réunis dans une seule galerie, sans rien déplacer.',
-      f4_t: 'Recherche instantanée', f4_p: 'Croisez un nom, un lieu et une année. La bonne photo remonte en un instant.',
-      f5_t: 'Favoris & albums', f5_p: 'Étoilez les plus belles, regroupez-les en albums vivants qui se mettent à jour seuls.',
-      f6_t: 'Vos photos restent vôtres', f6_p: "Tout se passe sur votre téléphone. Aucune photo n'est envoyée ailleurs sans vous.",
-      tagsys_eyebrow: 'Le système de tags', tagsys_title: 'Cinq couleurs pour toute une vie',
-      tagsys_lead: "Chaque Tag est lié à une grande famille reconnaissable d'un coup d'œil — et peut vivre sous un tag parent dans la <em>Tagothèque</em>.<br />La seule limite est celle de votre imagination.",
-      cat1_t: 'Personne', cat1_p: "Gens, familles, cercles d'amis",
-      cat2_t: 'Lieu', cat2_p: 'Endroits, villes, pays',
-      cat3_t: 'Évènement', cat3_p: 'Dates, fêtes, voyages',
-      cat4_t: 'Thème', cat4_p: 'Styles, sujets, ambiances',
-      cat5_t: 'Divers', cat5_p: 'Tout le reste',
-      tree_head: 'Echantillon de la Tagothèque',
-      tree_place: 'LIEU',
-      tg_australia: 'Australie', tg_wedding: 'Mariage', tg_babies: 'Bébés', tg_cars: 'Voitures', tg_animals: 'Animaux',
-      tg_childhood: 'Enfance', tg_photobooth: 'Photomaton', tg_dad: 'Papa', tg_mudbath: 'Bain de boue',
-      tg_holiday84: 'Vacances 1984', tg_italy: 'Italie', tg_pisa: 'Tour de Pise', tg_ancestors: 'Aïeux',
-      tg_beach: 'Plage', tg_wallplants: 'Plantes muricoles', tg_insects: 'Insectes', tg_bees: 'Abeilles',
-      tg_flowers: 'Fleurs', tg_dandelion: 'Pissenlit', tg_celebrities: 'Célébrités', tg_mom: 'Maman',
-      tg_youth: 'Jeunesse', tg_bw: 'Noir & Blanc',
-      aria_stars3: '3 étoiles sur 5', aria_stars4: '4 étoiles sur 5', aria_stars5: '5 étoiles sur 5',
-      aria_demo_tagging: "Démonstration d'étiquetage",
-      aria_fan: 'Sept niveaux de visionneuse déployés en éventail, du swipe plein écran à la grille six colonnes',
-      feat_attr1: 'Attribuez vos Tags', feat_attr2: "une photo après l'autre…", feat_attr3: '…ou bien en', feat_attr4: 'sélection groupée !',
-      svc_eyebrow: 'Fonctionnalités', svc_title: 'Services <em>compris</em>',
-      svc_lead: "Autant joindre l'utile à l'agréable<br />et tagger dans une interface riche et confortable.",
-      svc2_t: 'Albums sophistiqués', svc2_p: 'Mixez vos étiquettes pour créer des albums sophistiqués en un tournemain\u00a0!',
-      svc3_t: 'Reconnaissance\u00a0IA', svc3_p: "Reconnaissance faciale, lecture des métadonnées pour opérer des rapprochements : l'IA intégrée vous fera des suggestions de plus en plus pertinentes au fil du temps.",
-      svc4_t: 'Édition de photos', svc4_p: "Une petite gamme d'outils élémentaires pour des retouches rapides, individuelles ou groupées : pivoter, rogner, luminosité, saturation et quelques filtres de base…",
-      svc5_t: 'Modes multiples<br>de tagging', svc5_p: "Pour aller encore plus vite, l'application propose des interfaces de tagging malines, adaptées à toutes les formes de collections photo.",
-      svc6_t: 'Coffre privé', svc6_p: "Un coffre privé, avec code de déverrouillage, pour ranger vos photos les plus confidentielles — avec création de sous-dossiers. Petit bonus : il possède aussi sa propre arborescence de tags.",
-      svc_pill: '01 · Le pilier', svc1_t: 'Visionneuse <em>7&nbsp;niveaux</em>', svc1_lead: 'Une large palette de vues adaptées à vos besoins pour un tagging rapide…',
-      xmp_eyebrow: 'Import-Export', xmp_title: 'Focus pour les collectionneurs et les photographes méticuleux.',
-      xmp_lead: "Profitez de la haute compatibilité des étiquettes de LiberTag. <br />Importez-y vos photos et taggez-les à grande vitesse. <br />Puis exportez-les dans votre logiciel d'édition favori : vous venez de gagner un temps précieux de labelisation massive de vos clichés.",
-      xmp_cap: "L'écran d'export — résolution et encodage des tags, en deux gestes.",
-      xmp_exp_eye: 'Ce qui est exporté', xmp_exp_h: 'Trois champs XMP standards',
-      xmp_f1_p: "Liste plate des noms de tags — lue par tous les logiciels : Lightroom, Photos, Finder, l'Explorateur Windows, digiKam…",
-      xmp_f2_p: 'Le chemin hiérarchique complet, du parent à l\'enfant : <span class="kpath">Parent|Enfant</span>.',
-      xmp_f3_p: "La note de 1 à 5 étoiles — le standard universel d'appréciation (0 = absente du fichier).",
-      xmp_modes_eye: 'Modes de sortie', xmp_m1_t: 'Sidecar',
-      xmp_m1_p: 'Un fichier <span class="em">.xmp</span> posé à côté de l\'image, identique à ce que génère Lightroom. Compatible avec tous les formats — JPG, PNG, HEIC, WEBP, TIFF, RAW.',
-      xmp_m2_t: 'Gravé dans la photo',
-      xmp_m2_p: 'Le XMP est inscrit dans le fichier lui-même. Un <span class="em">JPEG</span> est patché sans aucune perte ; les autres formats sont réencodés en JPEG qualité 92.',
-      xmp_m3_t: 'Renommage de masse des fichiers', xmp_bonus: 'Bonus',
-      xmp_m3_p: "Renommez tous vos exports d'un seul geste selon un modèle — séquence, date, dimensions… Vos clichés arrivent déjà nommés proprement.",
-      price_eyebrow: 'Offre de lancement', price_title: "Une licence à vie pour une tranquillité d'esprit",
-      price_lead: "Pas d'abonnement, jamais de pubs, et un prix faramineusement bas pour la première vague de curieux.",
-      plan1_t: 'Freemium', plan1_tag: 'Taguer gratuitement', plan1_price: '0 €', plan1_per: '',
-      plan1_f1: 'Toutes les fonctionnalités SANS pubs', plan1_f2: 'Usage illimité dans le temps', plan1_f3: 'Limite de 20 tags', plan1_f4: 'Limite de 20 photos par export', plan1_cta: 'Télécharger',
-      plan2_flag: 'Offre de lancement', plan2_t: 'Premium', plan2_tag: 'Des collections illimitées de tags', plan2_price: '4,99 €', plan2_per: 'pour toujours',
-      plan2_f1: 'Toutes les fonctionnalités', plan2_f2: 'Licence à vie', plan2_f3: 'Mises à jour gratuites', plan2_f4: 'Zéro pubs', plan2_cta: 'Télécharger',
-      faq_eyebrow: 'Questions fréquentes', faq_title: 'Tout ce qu\u2019il faut savoir',
-      cta_title: 'Des milliers de photos.<br /><em>Zéro chaos.</em>',
-      cta_lead: "Téléchargez LiberTag <br>et magnifiez vos photos dans les albums qu'elles méritent.",
-      foot_tagline: "L'application qui libère<br>vos photos de l'oubli",
-      foot_product: 'Produit', foot_plan: 'Plan', foot_company: 'À propos', foot_dl: 'Télécharger',
-      foot_privacy: 'Confidentialité', foot_terms: 'Conditions', foot_contact: 'Contact',
-      foot_copy: '© 2026 FluXart Studio — Conçu avec soin pour Android.', foot_made: 'Conçu avec soin pour Android.',
-      pbm_eyebrow: "L'aiguille dans la botte de foin",
-      pbm_title: 'La limite des <em>albums classiques</em>',
-      pbm_lead: 'Débusquer des photos précises dans un album bien rempli peut vite devenir une chasse au trésor agaçante et chronophage.',
-      pbm_album_title: 'Mon super album', pbm_photos: 'photos',
-      pbm_question: 'Comment retrouver <b>cette</b> photo, précisément ?',
-      pbm_label: 'La réponse LiberTag', pbm_text: 'Lui attribuer des <em>tags</em>.',
-      pbm_tag1: 'Coucher de soleil', pbm_tag2: 'Bretagne', pbm_tag4: 'Été 2025',
-      priv_doc_title: 'LiberTag — Politique de confidentialité',
-      priv_eyebrow: 'Vos données, votre tranquillité',
-      priv_title: 'Politique de confidentialité',
-      priv_updated: 'Dernière mise à jour — 5 juillet 2026',
-      priv_h1: '1. Les données que nous traitons',
-      priv_p1a: "Dans sa version actuelle, LiberTag fonctionne entièrement en local sur votre appareil. L'application traite vos photos, leurs métadonnées (dates, tags que vous créez), ainsi qu'un code PIN optionnel que vous pouvez définir pour protéger l'accès à l'application.",
-      priv_p1b: "L'application utilise également des technologies de reconnaissance faciale et d'analyse d'images (via la bibliothèque MediaPipe) pour vous aider à organiser vos photos. Ce traitement s'effectue intégralement sur votre appareil : aucune image, aucun visage détecté et aucune donnée dérivée de ces analyses n'est envoyé vers nos serveurs ou vers des tiers.",
-      priv_p1c: "Aucune de ces données n'est envoyée à nos serveurs ni à des tiers.",
-      priv_h2: '2. Pourquoi nous les traitons',
-      priv_p2: "Ces données sont traitées uniquement pour permettre le fonctionnement de l'application : organiser et retrouver vos photos via le système de tags, et sécuriser l'accès à l'application via le code PIN. Le PIN n'est jamais stocké en clair : il est protégé par une fonction de hachage sécurisée (PBKDF2-HMAC-SHA256), ce qui signifie que même nous ne pouvons pas le connaître ou le récupérer.",
-      priv_h3: '3. Vos photos restent chez vous',
-      priv_p3a: 'Par défaut, toutes vos photos et tous vos tags restent stockés exclusivement sur votre appareil. Nous ne les copions pas, ne les consultons pas et ne les transmettons pas.',
-      priv_p3b: "Nous prévoyons de proposer à l'avenir un service optionnel de stockage et de synchronisation dans le cloud. Ce service sera strictement soumis à votre souscription volontaire : tant que vous n'y souscrivez pas, aucune photo ni aucun tag ne quitte votre appareil. Si vous choisissez d'y souscrire, une politique de confidentialité complémentaire, spécifique à ce service, vous sera présentée avant toute activation, détaillant précisément quelles données seraient alors transmises, où elles seraient hébergées et comment elles seraient protégées.",
-      priv_h4: '4. Conservation et sécurité',
-      priv_p4: "Vos données étant stockées localement, leur conservation dépend de votre appareil et de vos propres actions (désinstallation de l'application, suppression manuelle). Nous mettons en œuvre les bonnes pratiques de sécurité disponibles sur Android pour protéger l'accès à ces données au sein de l'application, notamment via le hachage sécurisé du code PIN mentionné ci-dessus.",
-      priv_h5: '5. Vos droits',
-      priv_p5: "Comme vos données restent sur votre appareil, vous en gardez la maîtrise complète à tout moment : vous pouvez les consulter, les modifier ou les supprimer directement depuis l'application, ou en désinstallant l'application. Aucune démarche auprès de nous n'est nécessaire pour exercer ces droits, puisque nous ne détenons aucune copie de vos données.",
-      priv_h6: '6. Nous contacter',
-      priv_p6: 'Pour toute question relative à vos données, écrivez-nous à <a href="mailto:admin@fluxart.fr">admin@fluxart.fr</a>.',
-      terms_doc_title: "LiberTag — Conditions d'utilisation",
-      terms_eyebrow: 'Le cadre de votre usage',
-      terms_title: "Conditions d'utilisation",
-      terms_updated: 'Dernière mise à jour — 5 juillet 2026',
-      terms_h1: '1. Acceptation des conditions',
-      terms_p1: "En installant et en utilisant LiberTag, vous acceptez les présentes conditions d'utilisation dans leur intégralité. Si vous n'acceptez pas ces conditions, nous vous invitons à ne pas utiliser l'application.",
-      terms_h2: "2. Licence d'utilisation",
-      terms_p2: "FluXart Studio vous accorde une licence personnelle, non exclusive et non transférable d'utilisation de LiberTag, dans le cadre de son usage normal sur un appareil Android vous appartenant. Cette licence ne vous transfère aucun droit de propriété sur l'application elle-même.",
-      terms_h3: "3. Utilisation de l'application",
-      terms_p3: "LiberTag fonctionne entièrement en local sur votre appareil : elle vous permet d'étiqueter, classer, retrouver et exporter vos photos. Vous vous engagez à utiliser l'application conformément à sa destination et à la réglementation en vigueur, notamment à ne pas l'utiliser pour traiter des contenus dont vous ne détenez pas les droits ou dont le traitement serait illégal.",
-      terms_h4: '4. Achats et licence à vie',
-      terms_p4a: 'LiberTag propose une version gratuite (Freemium) et une version Premium.',
-      terms_p4b: "La version gratuite est limitée à 30 tags dans la Tagothèque, et à un export simultané de 20 photos maximum par tranche.",
-      terms_p4c: "La version Premium s'obtient via un achat unique, sans abonnement : elle lève ces limitations de façon définitive et à vie sur l'appareil concerné. Elle ne fait l'objet d'aucun renouvellement ni prélèvement récurrent. Les achats sont traités par la plateforme de distribution (Google Play) et soumis à ses propres conditions et politiques de remboursement.",
-      terms_h5: '5. Propriété intellectuelle',
-      terms_p5: "L'application LiberTag, son code, son design, son nom et son logo sont la propriété de FluXart Studio et sont protégés par le droit de la propriété intellectuelle. Vos photos, vos tags et l'ensemble des contenus que vous créez ou importez dans l'application restent votre entière propriété : LiberTag ne revendique aucun droit sur vos données.",
-      terms_h6: '6. Responsabilité',
-      terms_p6: 'LiberTag est fournie « en l\'état », sans garantie de fonctionnement ininterrompu ou exempt d\'erreurs. FluXart Studio met tout en œuvre pour assurer la fiabilité de l\'application, mais ne saurait être tenu responsable des pertes de données ou dommages indirects résultant de son utilisation. Vos photos restant stockées sur votre appareil (voir notre <a href="Confidentialite.html">politique de confidentialité</a>), vous restez seul responsable de leur sauvegarde.',
-      terms_h7: '7. Nous contacter',
-      terms_p7: 'Pour toute question relative à ces conditions, écrivez-nous à <a href="mailto:admin@fluxart.fr">admin@fluxart.fr</a>.',
+      // Le texte français vit désormais dans les pages HTML (source unique, éditée dans Pinegrow).
+      // Il est photographié au chargement par snapshotFrench(). Seule la FAQ, générée par script, reste ici.
       faq: [
         ['LiberTag déplace-t-il mes photos ?', "Non. LiberTag lit vos photos là où elles sont déjà — pellicule, albums, dossiers. Vos images ne sont copiées ou déplacées qu'à votre seule initiative dans l'application."],
         ['Mes photos sont-elles envoyées sur un serveur ?', "LiberTag ne gère aucun serveur externe. Tout reste dans votre téléphone.<br />Vous serez ultérieurement informé(e) si nous mettons en place un système de sauvegarde sur le cloud."],
@@ -143,7 +22,7 @@
       nav_system: 'The System', nav_example: 'Examples', nav_import: 'Import-Export', nav_features: 'Features', nav_tags: 'Tags', nav_pricing: 'Pricing', nav_faq: 'FAQ', nav_cta: 'Download',
       hero_eyebrow: 'Advanced photo tagging',
       hero_title: 'Your memories,<br />to <em>cherish</em>.',
-      hero_lead: "Stop letting thousands of images pile up in a heap.<br />Turn them into a living library and find any photo in the blink of an eye.<br />The app that finally frees your photos from oblivion.",
+      hero_lead: "Stop letting thousands of images pile up in a heap. <br class='br-lg' />Turn them into a living library and find any photo in the blink of an eye.<br />The app that finally frees your photos from oblivion.",
       compat_label: 'Works with',
       badge_small: 'Get it on', hero_secondary: 'See the app',
       hero_note: "4.8 — \u201CI can finally find my kids' photos\u201D",
@@ -360,6 +239,26 @@
     });
   }
 
+  /* ---------------------------------------------------- french snapshot */
+  // Le HTML est la source unique du français : au chargement (avant toute
+  // bascule de langue), on photographie le texte FR tel qu'écrit dans la page.
+  // Cliquer EN remplace par le dictionnaire anglais ; cliquer FR restaure ceci.
+  function snapshotFrench() {
+    const F = I18N.fr;
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const k = el.getAttribute('data-i18n');
+      if (F[k] == null) F[k] = el.textContent;
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+      const k = el.getAttribute('data-i18n-html');
+      if (F[k] == null) F[k] = el.innerHTML;
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+      const k = el.getAttribute('data-i18n-aria');
+      if (F[k] == null) F[k] = el.getAttribute('aria-label');
+    });
+  }
+
   /* ---------------------------------------------------- apply language */
   let currentLang = localStorage.getItem('lt_lang') || 'fr';
   function applyLang(lang) {
@@ -467,12 +366,146 @@
     });
   }
 
+  /* ---------------------------------------------------- mise en page figée
+     Réglages issus de l'ancien panneau de conception (Tweaks), gravés en dur.
+     Positionne les blocs des sections « Plaisir des retrouvailles » et
+     « Import-Export », le panneau coloré et la ligne pointillée dorée. */
+  const FIXED = {
+    featBg: { top: 1002, height: 988, tilt: 122, color: '#1c1c1c' },
+    servicesBg: '#15100F',
+    line: { sx: 841, sy: 1222, ex: 43, ey: 567, curve: 56, dot: 3, gap: 6 },
+    movables: [
+      { sel: '.attr-t1', ctx: '.attr-flow', z: '6', x: -88, y: 491 },
+      { sel: '.cwf-phone', ctx: '.cwf-demo', z: '4', x: 317, y: 0, freeze: true },
+      { sel: '.cwf-tag', ctx: '.cwf-phone', z: '8', x: 464, y: -1 },
+      { sel: '.attr-t2', ctx: '.cwf-phone', z: '7', x: 474, y: 491 },
+      { sel: '.xmp-mv-title', ctx: '.xmp-showcase', z: '8', x: 6, y: 546 },
+      { sel: '.xmp-mv-sidecar', ctx: '.xmp-showcase', z: '7', w: '320px', x: 367, y: 593 },
+      { sel: '.xmp-mv-embed', ctx: '.xmp-showcase', z: '7', w: '320px', x: 6, y: 593 },
+      { sel: '.xmp-mv-bonus', ctx: '.xmp-showcase', z: '7', w: '320px', x: 730, y: 567 },
+    ],
+  };
+
+  function darkenHex(hex, f) {
+    const m = /^#?([0-9a-f]{6})$/i.exec(hex || '');
+    if (!m) return hex || '#1A130E';
+    const n = parseInt(m[1], 16);
+    const r = Math.round(((n >> 16) & 255) * (1 - f));
+    const g = Math.round(((n >> 8) & 255) * (1 - f));
+    const b = Math.round((n & 255) * (1 - f));
+    return `rgb(${r},${g},${b})`;
+  }
+
+  function drawGoldLine() {
+    const flow = document.querySelector('.attr-flow');
+    const svg = document.querySelector('.attr-line');
+    const path = document.querySelector('.attr-line-path');
+    if (!flow || !svg || !path) return;
+    const c = FIXED.line;
+    path.style.strokeWidth = c.dot + 'px';
+    path.style.strokeDasharray = '0 ' + c.gap;
+    svg.setAttribute('viewBox', `0 0 ${flow.clientWidth} ${flow.clientHeight}`);
+    const dx = c.ex - c.sx, dy = c.ey - c.sy;
+    const len = Math.hypot(dx, dy) || 1;
+    const nx = dy / len, ny = -dx / len;
+    const bow = len * (c.curve / 100);
+    const cx = (c.sx + c.ex) / 2 + nx * bow;
+    const cy = (c.sy + c.ey) / 2 + ny * bow;
+    path.setAttribute('d', `M ${c.sx} ${c.sy} Q ${cx.toFixed(1)} ${cy.toFixed(1)} ${c.ex} ${c.ey}`);
+  }
+
+  // Agrandit chaque conteneur pour couvrir le bloc placé le plus bas
+  // (les blocs positionnés en absolu sortent du flux normal).
+  function containMovables() {
+    const groups = new Map();
+    FIXED.movables.forEach((m) => {
+      const ctx = document.querySelector(m.ctx);
+      const el = document.querySelector(m.sel);
+      if (!ctx || !el) return;
+      if (!groups.has(ctx)) groups.set(ctx, []);
+      groups.get(ctx).push(el);
+    });
+    groups.forEach((els, ctx) => {
+      const cr = ctx.getBoundingClientRect();
+      let maxBottom = 0;
+      els.forEach((el) => { maxBottom = Math.max(maxBottom, el.getBoundingClientRect().bottom - cr.top); });
+      ctx.style.minHeight = Math.ceil(maxBottom + 24) + 'px';
+    });
+  }
+
+  // Les positions figées sont calibrées pour le grand écran. En dessous de
+  // ce seuil elles déborderaient : on relâche tout et le CSS reprend la main
+  // (empilement naturel, cf. @media dans site.css).
+  const FIXED_LAYOUT_MIN_WIDTH = 999;
+  const fixedLayoutApplies = () => window.innerWidth >= FIXED_LAYOUT_MIN_WIDTH;
+
+  function releaseMovables() {
+    FIXED.movables.forEach((m) => {
+      const el = document.querySelector(m.sel);
+      const ctx = document.querySelector(m.ctx);
+      if (el) {
+        el.style.position = '';
+        el.style.margin = '';
+        el.style.width = '';
+        el.style.left = '';
+        el.style.top = '';
+        el.style.zIndex = '';
+      }
+      if (ctx) ctx.style.minHeight = '';
+    });
+    const svg = document.querySelector('.attr-line');
+    if (svg) svg.style.display = 'none';
+  }
+
+  function applyFixedLayout() {
+    const bg = document.querySelector('.feat-bg');
+    if (bg) {
+      const c = FIXED.featBg;
+      // Le panneau coloré est positionné au pixel près pour le grand écran :
+      // sous le seuil, il se retrouverait n'importe où → on l'éteint.
+      if (!fixedLayoutApplies()) {
+        bg.style.display = 'none';
+      } else {
+        bg.style.display = 'block';
+        bg.style.setProperty('--feat-top', c.top + 'px');
+        bg.style.setProperty('--feat-height', c.height + 'px');
+        bg.style.setProperty('--feat-fill', `linear-gradient(180deg, ${c.color}, ${darkenHex(c.color, 0.32)})`);
+        bg.style.setProperty('--feat-clip', `polygon(0 ${Math.max(0, c.tilt)}px, 100% ${Math.max(0, -c.tilt)}px, 100% 100%, 0 100%)`);
+      }
+    }
+    const svc = document.getElementById('services');
+    if (svc) svc.style.background = FIXED.servicesBg;
+
+    if (!fixedLayoutApplies()) { releaseMovables(); return; }
+
+    const svg = document.querySelector('.attr-line');
+    if (svg) svg.style.display = '';
+    FIXED.movables.forEach((m) => {
+      const el = document.querySelector(m.sel);
+      const ctx = document.querySelector(m.ctx);
+      if (!el || !ctx) return;
+      if (m.freeze) ctx.style.minHeight = el.offsetHeight + 'px';
+      el.style.position = 'absolute';
+      el.style.margin = '0';
+      if (m.w) el.style.width = m.w;
+      el.style.left = m.x + 'px';
+      el.style.top = m.y + 'px';
+      el.style.zIndex = m.z;
+    });
+    containMovables();
+    drawGoldLine();
+  }
+
   /* ---------------------------------------------------- boot */
   function boot() {
     initNav();
+    snapshotFrench();
     applyLang(currentLang);
     initReveal();
     initTagScene();
+    applyFixedLayout();
+    window.addEventListener('resize', applyFixedLayout);
+    window.addEventListener('load', applyFixedLayout);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
