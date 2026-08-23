@@ -2531,27 +2531,22 @@ html.js-reveal .reveal.in {
     }
 }
 
-/* --- rangée « compatibles avec » : 3 + 3 dès qu'elle ne tient plus ---
-   Consigne Franck : la grille ne s'applique QUE si les six pastilles ne
-   passent pas sur une ligne. Un seuil d'écran calculé (416px) s'est
-   révélé faux à l'usage : la rangée peut manquer de place bien avant,
-   selon ce qui l'entoure. On part donc de la LARGEUR DU CONTENEUR,
-   pas de celle de l'écran — c'est elle qui décide réellement.
-   Six pastilles de 56px + cinq écarts de 8px = 376px. */
-.compat-rows {
-    container-type: inline-size;
-}
-
-@container (max-width: 375px) {
-    .compat-row {
-        display: grid;
-        grid-template-columns: repeat(3, 56px);
-        row-gap: 20px;
-        justify-content: center;
-    }
-}
-
+/* --- rangée « compatibles avec » sur mobile : 3 + 3 ---
+   Deux tentatives ratées avant celle-ci, et une cause commune : je
+   mesurais un seuil (d'écran, puis de conteneur) alors que la rangée
+   est un enfant flex que le navigateur COMPRIME à la place disponible
+   sans jamais déborder — aucun seuil ne se déclenchait. Ici, plus de
+   seuil : sous 998px la rangée enveloppe, et sa largeur est BORNÉE à
+   exactement trois pastilles (3 x 56 + 2 x 8 = 184px). Au-delà de
+   trois, la quatrième passe mécaniquement à la ligne. */
 @media (max-width: 998px) {
+    .compat-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 20px;
+        max-width: 184px;
+    }
+
     /* la césure entre les deux rangées (20px) ne doit pas se lire plus fort
        que la fin du bloc : on relève la marge basse en conséquence. */
     .compat {
