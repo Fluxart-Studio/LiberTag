@@ -515,6 +515,9 @@
         // dépliés rendraient la liste illisible sur un écran de téléphone.
         rows.forEach((o) => o.classList.remove('is-open'));
         if (!open) li.classList.add('is-open');
+        // Refermer doit aussi lâcher le focus : sinon la rangée reste
+        // « active » aux yeux du navigateur après le tap qui la ferme.
+        else li.blur();
       };
 
       li.addEventListener('click', toggle);

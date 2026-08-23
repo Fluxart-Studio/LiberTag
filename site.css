@@ -2531,20 +2531,27 @@ html.js-reveal .reveal.in {
     }
 }
 
-/* --- la rangée « compatibles avec » ne tient plus sur une ligne (< 416px) ---
-   6 pastilles de 56px + 5 gaps de 8px = 376px, plus 2 x 20px de marge
-   latérale = 416px. Au-dessus, les six restent sur une ligne (consigne
-   Franck : la grille ne s'applique QUE si elles ne passent pas toutes).
-   En dessous, un simple flex-wrap remplirait la ligne au maximum (5 + 1) :
-   il faut imposer 3 colonnes pour obtenir 3 + 3. */
-@media (max-width: 415px) {
+/* --- rangée « compatibles avec » : 3 + 3 dès qu'elle ne tient plus ---
+   Consigne Franck : la grille ne s'applique QUE si les six pastilles ne
+   passent pas sur une ligne. Un seuil d'écran calculé (416px) s'est
+   révélé faux à l'usage : la rangée peut manquer de place bien avant,
+   selon ce qui l'entoure. On part donc de la LARGEUR DU CONTENEUR,
+   pas de celle de l'écran — c'est elle qui décide réellement.
+   Six pastilles de 56px + cinq écarts de 8px = 376px. */
+.compat-rows {
+    container-type: inline-size;
+}
+
+@container (max-width: 375px) {
     .compat-row {
         display: grid;
         grid-template-columns: repeat(3, 56px);
         row-gap: 20px;
         justify-content: center;
     }
+}
 
+@media (max-width: 998px) {
     /* la césure entre les deux rangées (20px) ne doit pas se lire plus fort
        que la fin du bloc : on relève la marge basse en conséquence. */
     .compat {
