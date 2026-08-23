@@ -1178,6 +1178,33 @@ h3 {
     background-position: center;
 }
 
+/* repère « c'est une vidéo » sur une vignette du hero.
+   Le flou porte sur la photo DERRIÈRE le disque, jamais sur le triangle :
+   un pictogramme flouté ne se lit plus. */
+.lt-vid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 38%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(212, 162, 74, .85);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0 0 0 1px rgba(246, 238, 223, .3), 0 4px 12px -4px rgba(0, 0, 0, .5);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.lt-vid svg {
+    width: 62%;
+    height: 62%;
+    color: var(--accent-ink);
+}
+
 .lt-photo .corner {
     position: absolute;
     top: 0;
@@ -2504,14 +2531,29 @@ html.js-reveal .reveal.in {
     }
 }
 
-/* --- très petits écrans (≤ 540px) --- */
-@media (max-width: 540px) {
-    /* logos « compatibles avec » : passage à la ligne au lieu de déborder */
+/* --- la rangée « compatibles avec » ne tient plus sur une ligne (< 416px) ---
+   6 pastilles de 56px + 5 gaps de 8px = 376px, plus 2 x 20px de marge
+   latérale = 416px. Au-dessus, les six restent sur une ligne (consigne
+   Franck : la grille ne s'applique QUE si elles ne passent pas toutes).
+   En dessous, un simple flex-wrap remplirait la ligne au maximum (5 + 1) :
+   il faut imposer 3 colonnes pour obtenir 3 + 3. */
+@media (max-width: 415px) {
     .compat-row {
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 56px);
+        row-gap: 20px;
         justify-content: center;
     }
 
+    /* la césure entre les deux rangées (20px) ne doit pas se lire plus fort
+       que la fin du bloc : on relève la marge basse en conséquence. */
+    .compat {
+        margin-bottom: 24px;
+    }
+}
+
+/* --- très petits écrans (≤ 540px) --- */
+@media (max-width: 540px) {
     /* chips flottantes du hero : rapprochées du téléphone et légèrement
        réduites pour rester entières à l'écran (jamais masquées) */
     .fc1, .fc3, .fc5 {

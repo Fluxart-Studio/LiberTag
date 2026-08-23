@@ -10,7 +10,7 @@
       // Le texte français vit désormais dans les pages HTML (source unique, éditée dans Pinegrow).
       // Il est photographié au chargement par snapshotFrench(). Seule la FAQ, générée par script, reste ici.
       faq: [
-        ['LiberTag déplace-t-il mes photos ?', "Non. LiberTag lit vos photos là où elles sont déjà — pellicule, albums, dossiers. Vos images ne sont copiées ou déplacées qu'à votre seule initiative dans l'application."],
+        ['LiberTag déplace-t-il mes photos & vidéos ?', "Non. LiberTag lit vos photos & vidéos là où elles sont déjà — pellicule, albums, dossiers. Vos images ne sont copiées ou déplacées qu'à votre seule initiative dans l'application."],
         ['Mes photos sont-elles envoyées sur un serveur ?', "LiberTag ne gère aucun serveur externe. Tout reste dans votre téléphone.<br />Vous serez ultérieurement informé(e) si nous mettons en place un système de sauvegarde sur le cloud."],
         ['Qu\u2019est-ce qu\u2019un « tag parent » ?', "C'est un tag qui en regroupe d'autres, que vous êtes libres de créer ou pas.<br />« France » et « Italie » seraient des tags-enfants du tag-parent « Europe », par exemple.<br />C'est ce qu'on appelle des « tags hiérarchiques », utilisés dans des logiciels comme Lightroom.<br />Cela permet une recherche plus large quand on remonte dans la hiérarchie.<br />Mais la plupart des logiciels ne gèrent pas cette hiérarchie. Ainsi vous exporterez « France », « Italie » et « Europe » comme 3 tags indépendants sur les photos concernées.<br />Quand vous attribuez un tag-enfant, LiberTag attribue aussi automatiquement à l'image les tags-parents que vous aurez créés à cet effet."],
         ['L\u2019étiquetage automatique est-il fiable ?', "L'IA propose des suggestions sous chaque photo ; libre à vous de les valider ou pas.<br />La qualité des résultats s'accroît avec le nombre de photos taggées et répertoriées par l'IA. Et vous avez accès à ce répertoire de l'IA pour écarter les images non pertinentes à son apprentissage."],
@@ -20,9 +20,9 @@
     },
     en: {
       nav_system: 'The System', nav_example: 'Examples', nav_import: 'Import-Export', nav_features: 'Features', nav_tags: 'Tags', nav_pricing: 'Pricing', nav_faq: 'FAQ', nav_cta: 'Download',
-      hero_eyebrow: 'Advanced photo tagging',
+      hero_eyebrow: 'Advanced photo & video tagging',
       hero_title: 'Your memories,<br />to <em>cherish</em>.',
-      hero_lead: "Stop letting thousands of images pile up in a heap. <br class='br-lg' />Turn them into a living library and find any photo in the blink of an eye.<br />The app that finally frees your photos from oblivion.",
+      hero_lead: "You let thousands of photos & videos pile up in a heap. <br class='br-lg' />Turn them into a living library and find any photo in the blink of an eye.<br />The app that finally frees your memories from oblivion.",
       compat_label: 'Works with',
       badge_small: 'Get it on', hero_secondary: 'See the app',
       hero_note: "4.8 — \u201CI can finally find my kids' photos\u201D",
@@ -66,7 +66,7 @@
       svc_lead: 'Why not mix business with pleasure<br />and tag in a rich, comfortable interface.',
       svc2_t: 'Sophisticated albums', svc2_p: 'Mix your labels to build sophisticated albums in a snap!',
       svc3_t: 'AI\u00a0recognition', svc3_p: 'Facial recognition and metadata reading to connect the dots: the built-in AI gives you ever more relevant suggestions over time.',
-      svc4_t: 'Photo editing', svc4_p: 'A small set of essential tools for quick edits, one by one or in bulk: rotate, crop, brightness, saturation and a few basic filters…',
+      svc4_t: 'Photo & video editing', svc4_p: 'A range of essential tools for photo retouching and video editing.',
       svc5_t: 'Multiple tagging<br>modes', svc5_p: 'To go even faster, the app offers clever tagging interfaces suited to every kind of photo collection.',
       svc6_t: 'Private vault', svc6_p: 'A private vault, with an unlock code, to store your most confidential photos — subfolders included. A nice bonus: it has its own tag tree as well.',
       svc_pill: '01 · The pillar', svc1_t: '<em>7-level</em> viewer', svc1_lead: 'A wide range of views tailored to your needs for fast tagging…',
@@ -86,8 +86,8 @@
       price_eyebrow: 'Launch offer', price_title: 'A lifetime license for true peace of mind',
       price_lead: 'No subscription, never any ads, and an absurdly low price for the first wave of curious early birds.',
       plan1_t: 'Freemium', plan1_tag: 'Tag for free', plan1_price: '$0', plan1_per: '',
-      plan1_f1: 'All features WITHOUT ads', plan1_f2: 'Unlimited in time', plan1_f3: 'Limit of 20 tags', plan1_f4: 'Limit of 20 photos per export', plan1_cta: 'Download',
-      plan2_flag: 'Launch offer', plan2_t: 'Premium', plan2_tag: 'Unlimited tag collections', plan2_price: '$4.99', plan2_per: 'forever',
+      plan1_f1: 'All features WITHOUT ads', plan1_f2: 'Unlimited in time', plan1_f3: 'Limit of 10 tags', plan1_f4: 'Limit of 5 files per export', plan1_cta: 'Download',
+      plan2_flag: 'Launch offer', plan2_t: 'Premium', plan2_tag: 'Unlimited tag collections', plan2_price: '$5.49', plan2_per: 'forever',
       plan2_f1: 'All features', plan2_f2: 'Lifetime license', plan2_f3: 'Free updates', plan2_f4: 'Zero ads', plan2_cta: 'Download',
       faq_eyebrow: 'Frequently asked', faq_title: 'Everything you need to know',
       cta_title: 'Thousands of photos.<br /><em>Zero chaos.</em>',
@@ -106,26 +106,28 @@
       priv_doc_title: 'LiberTag — Privacy Policy',
       priv_eyebrow: 'Your data, your peace of mind',
       priv_title: 'Privacy Policy',
-      priv_updated: 'Last updated — July 5, 2026',
+      priv_updated: 'Last updated — August 22, 2026',
       priv_h1: '1. The data we process',
-      priv_p1a: 'In its current version, LiberTag runs entirely locally on your device. The app processes your photos, their metadata (dates, tags you create), as well as an optional PIN code you can set to protect access to the app.',
-      priv_p1b: 'The app also uses facial recognition and image analysis technologies (via the MediaPipe library) to help you organize your photos. This processing takes place entirely on your device: no image, no detected face and no data derived from these analyses is ever sent to our servers or to third parties.',
-      priv_p1c: 'None of this data is sent to our servers or to third parties.',
+      priv_p1a: 'In its current version, LiberTag runs entirely locally on your device. The application processes your photos, their metadata (dates, tags you create), as well as an optional PIN code that you may set to protect access to the application.',
+      priv_p1b: 'The application also uses facial recognition and image analysis technologies (via the MediaPipe library) to help you organise your photos. This processing takes place entirely on your device: no image, no detected face and no data derived from these analyses is sent to our servers or to third parties.',
+      priv_p1c: 'Your photos, your tags and your metadata are never sent to our servers or to third parties.',
+      priv_p1d: 'In order to deliver our information messages to you (for example, the announcement of a price change), the application queries the Firebase Remote Config service, provided by Google, when it starts. During this exchange, Google receives a technical installation identifier (randomly generated, unrelated to your identity), the version of the application, and the language and country of the device. This exchange never involves your photos, your tags or your metadata, and we do not associate any personal data with it. Google\'s processing of this information is governed by Google\'s privacy policy.',
+      priv_p1e: 'Purchases made within the application are handled by Google Play, under its own terms and its own privacy policy: we receive no payment details.',
       priv_h2: '2. Why we process it',
-      priv_p2: 'This data is processed solely to make the app work: organizing and finding your photos through the tag system, and securing access to the app with the PIN code. The PIN is never stored in plain text: it is protected by a secure hashing function (PBKDF2-HMAC-SHA256), which means even we cannot know or recover it.',
+      priv_p2: 'This data is processed solely to enable the application to function: to organise and find your photos through the tag system, to secure access to the application through the PIN code, and to display our information messages. The PIN is never stored in plain text: it is protected by a secure hash function (PBKDF2-HMAC-SHA256), which means that even we cannot know or recover it.',
       priv_h3: '3. Your photos stay with you',
-      priv_p3a: 'By default, all your photos and all your tags are stored exclusively on your device. We do not copy them, view them or transmit them.',
-      priv_p3b: 'We plan to offer an optional cloud storage and sync service in the future. That service will be strictly subject to your voluntary subscription: as long as you do not subscribe, no photo and no tag ever leaves your device. If you choose to subscribe, an additional privacy policy specific to that service will be presented to you before any activation, detailing exactly which data would then be transmitted, where it would be hosted and how it would be protected.',
+      priv_p3a: 'By default, all your photos and all your tags remain stored exclusively on your device. We do not copy them, do not view them and do not transmit them.',
+      priv_p3b: 'We plan to offer an optional cloud storage and synchronisation service in the future. This service will be strictly subject to your voluntary subscription: as long as you do not subscribe to it, no photo and no tag leaves your device. Should you choose to subscribe to it, a supplementary privacy policy, specific to that service, will be presented to you before any activation, setting out precisely which data would then be transmitted, where it would be hosted and how it would be protected.',
       priv_h4: '4. Retention and security',
-      priv_p4: 'Since your data is stored locally, its retention depends on your device and your own actions (uninstalling the app, manual deletion). We apply the security best practices available on Android to protect access to this data within the app, notably through the secure hashing of the PIN code mentioned above.',
+      priv_p4: 'As your data is stored locally, its retention depends on your device and on your own actions (uninstalling the application, manual deletion). We implement the security best practices available on Android to protect access to this data within the application, in particular through the secure hashing of the PIN code mentioned above.',
       priv_h5: '5. Your rights',
-      priv_p5: 'Because your data stays on your device, you retain full control over it at all times: you can view, edit or delete it directly from the app, or by uninstalling the app. No request to us is needed to exercise these rights, since we hold no copy of your data.',
+      priv_p5: 'Since your data remains on your device, you retain full control over it at all times: you can view, modify or delete it directly from the application, or by uninstalling the application. No request to us is necessary in order to exercise these rights, since we hold no copy of your data. The technical installation identifier mentioned above is likewise deleted together with the application.',
       priv_h6: '6. Contact us',
-      priv_p6: 'For any question about your data, write to us at <a href="mailto:admin@fluxart.fr">admin@fluxart.fr</a>.',
+      priv_p6: 'For any question relating to your data, write to us at <a href="mailto:admin@fluxart.fr">admin@fluxart.fr</a>.',
       terms_doc_title: 'LiberTag — Terms of Use',
       terms_eyebrow: 'The framework of your use',
       terms_title: 'Terms of Use',
-      terms_updated: 'Last updated — July 5, 2026',
+      terms_updated: 'Last updated — August 22, 2026',
       terms_h1: '1. Acceptance of the terms',
       terms_p1: 'By installing and using LiberTag, you accept these terms of use in full. If you do not accept these terms, we invite you not to use the app.',
       terms_h2: '2. License of use',
@@ -134,7 +136,7 @@
       terms_p3: 'LiberTag runs entirely locally on your device: it lets you tag, sort, find and export your photos. You agree to use the app in accordance with its purpose and with applicable law, in particular not to use it to process content you do not hold the rights to, or whose processing would be illegal.',
       terms_h4: '4. Purchases and lifetime license',
       terms_p4a: 'LiberTag offers a free version (Freemium) and a Premium version.',
-      terms_p4b: 'The free version is limited to 30 tags in the Tag Library, and to exporting at most 20 photos at a time per batch.',
+      terms_p4b: 'The free version is limited to 10 tags in the Tag Library, and to exporting at most 5 files at a time per batch.',
       terms_p4c: 'The Premium version is obtained through a one-time purchase, with no subscription: it lifts these limitations permanently and for life on the device concerned. It involves no renewal or recurring charge. Purchases are handled by the distribution platform (Google Play) and subject to its own terms and refund policies.',
       terms_h5: '5. Intellectual property',
       terms_p5: 'The LiberTag app, its code, its design, its name and its logo are the property of FluXart Studio and are protected by intellectual property law. Your photos, your tags and all the content you create or import into the app remain entirely your property: LiberTag claims no right over your data.',
@@ -143,7 +145,7 @@
       terms_h7: '7. Contact us',
       terms_p7: 'For any question about these terms, write to us at <a href="mailto:admin@fluxart.fr">admin@fluxart.fr</a>.',
       faq: [
-        ['Does LiberTag move my photos?', 'No. LiberTag reads your photos right where they already are — camera roll, albums, folders. Your images are only ever copied or moved when you choose to, inside the app.'],
+        ['Does LiberTag move my photos & videos?', 'No. LiberTag reads your photos & videos right where they already are — camera roll, albums, folders. Your images are only ever copied or moved when you choose to, inside the app.'],
         ['Are my photos sent to a server?', 'LiberTag runs no external server. Everything stays on your phone.<br />You\u2019ll be notified later on if we ever add a cloud backup system.'],
         ['What is a \u201Cparent tag\u201D?', 'It\u2019s a tag that groups others together, which you\u2019re free to create or not.<br />\u201CFrance\u201D and \u201CItaly\u201D would be child tags of the parent tag \u201CEurope\u201D, for example.<br />These are what we call \u201Chierarchical tags\u201D, used in software like Lightroom.<br />They allow a broader search as you move up the hierarchy.<br />But most software doesn\u2019t handle this hierarchy, so you\u2019ll export \u201CFrance\u201D, \u201CItaly\u201D and \u201CEurope\u201D as 3 independent tags on the photos concerned.<br />When you assign a child tag, LiberTag also automatically applies to the image the parent tags you created for that purpose.'],
         ['Is automatic tagging reliable?', 'The AI offers suggestions under each photo; it\u2019s up to you to confirm them or not.<br />Result quality improves as more photos are tagged and indexed by the AI. And you have access to that AI index to remove images irrelevant to its learning.'],
@@ -496,6 +498,38 @@
     drawGoldLine();
   }
 
+  /* ---------------------------------------------------- fonctionnalités */
+  // Sur ordinateur, le survol déplie la rubrique. Au doigt il n'y a pas de
+  // survol, et :focus-visible ne se déclenche PAS à un tap (les navigateurs
+  // le réservent au clavier) : sans ce câblage, les six rubriques seraient
+  // muettes sur mobile. La classe .is-open rejoue exactement le rendu du
+  // survol — le CSS n'a rien de nouveau à décrire.
+  function initFeatureRows() {
+    const rows = document.querySelectorAll('.fxr-index li');
+    if (!rows.length) return;
+
+    rows.forEach((li) => {
+      const toggle = () => {
+        const open = li.classList.contains('is-open');
+        // Une seule rubrique ouverte à la fois, comme la FAQ : six panneaux
+        // dépliés rendraient la liste illisible sur un écran de téléphone.
+        rows.forEach((o) => o.classList.remove('is-open'));
+        if (!open) li.classList.add('is-open');
+      };
+
+      li.addEventListener('click', toggle);
+
+      // Le tabindex="0" du balisage promet déjà l'accès clavier : Entrée et
+      // Espace doivent donc faire ce que fait le tap.
+      li.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();   // sinon Espace fait défiler la page
+          toggle();
+        }
+      });
+    });
+  }
+
   /* ---------------------------------------------------- boot */
   function boot() {
     initNav();
@@ -503,6 +537,7 @@
     applyLang(currentLang);
     initReveal();
     initTagScene();
+    initFeatureRows();
     applyFixedLayout();
     window.addEventListener('resize', applyFixedLayout);
     window.addEventListener('load', applyFixedLayout);
