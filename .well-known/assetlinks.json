@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.libertag.myapp",
+      "sha256_cert_fingerprints": [
+        "10:40:6A:44:62:E4:7D:3C:54:CE:1E:62:0C:5D:83:E0:F7:EE:54:74:D7:2D:C0:90:AF:E9:E4:74:B6:01:13:02"
+      ]
+    }
+  }
+]
