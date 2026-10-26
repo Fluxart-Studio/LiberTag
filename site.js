@@ -72,7 +72,7 @@
       svc7_t: 'Date search', svc7_p: 'A calendar to find your photos by year and month, based on their real capture date — the one the camera wrote into the file.',
       svc_pill: '01 · The pillar', svc1_t: '<em>7-level</em> viewer', svc1_lead: 'A wide range of views tailored to your needs for fast tagging…',
       xmp_eyebrow: 'Import-Export', xmp_title: 'A focus for collectors and meticulous photographers.',
-      xmp_lead: 'Make the most of LiberTag\u2019s highly compatible labels. <br />Import your photos and tag them at top speed. <br />Then export them to your favorite editing software: you\u2019ve just saved precious time mass-labeling your shots.',
+      xmp_lead: 'Make the most of LiberTag\u2019s highly compatible labels. Then export them to your favorite editing software: you\u2019ve just saved precious time mass-labeling your shots.',
       xmp_cap: 'The export screen — resolution and tag encoding, in two gestures.',
       xmp_exp_eye: 'What gets exported', xmp_exp_h: 'Three standard XMP fields',
       xmp_f1_p: 'A flat list of tag names — read by every app: Lightroom, Photos, Finder, Windows Explorer, digiKam…',
