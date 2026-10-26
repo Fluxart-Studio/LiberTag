@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"/>
-        <link rel="stylesheet" href="site.css?v=202608231731"/>
+        <link rel="stylesheet" href="site.css?v=202610261200"/>
         <link id="gfont-Fira-Sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&amp;display=swap">
     </head>
     <body>
@@ -162,6 +162,11 @@
                 <path d="M8.5 20H6.5A2.5 2.5 0 0 1 4 17.5V15.5"/>
                 <circle cx="12" cy="12" r="2.7"/>
                 <path d="M12 4.4V2.6M19.6 12h1.8"/>
+            </symbol>
+            <symbol id="fx-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="5.4" width="16" height="14.6" rx="2.4"/>
+                <path d="M4 10h16M8.5 3.5v3.6M15.5 3.5v3.6"/>
+                <circle cx="9" cy="14.6" r="1.1" fill="currentColor" stroke="none"/>
             </symbol>
             <symbol id="fx-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="5" y="10.4" width="14" height="9.6" rx="2.4"/>
@@ -813,7 +818,7 @@
                         <p class="lead" data-i18n-html="svc_lead">Autant joindre l'utile à l'agréable<br/>et tagger dans une interface riche et confortable.</p>
                     </div>
                     <div class="fxr-main" style="height: 650px; margin: 80px 0px 0px">
-                        <!-- ===== index éditorial · piliers 02 → 06 ===== -->
+                        <!-- ===== index éditorial · piliers 02 → 07 ===== -->
                         <ol class="fxr-index">
                             <li tabindex="0">
                                 <span class="fxr-n">02</span>
@@ -844,18 +849,31 @@
                             <li tabindex="0">
                                 <span class="fxr-n">04</span>
                                 <span class="fxr-ic"><svg width="20" height="20">
-                                        <use href="#fx-sliders"/>
+                                        <use href="#fx-lock"/>
                                     </svg></span>
-                                <h3 class="fxr-t" data-i18n="svc4_t">Éditions photos &amp; vidéos</h3>
+                                <h3 class="fxr-t" data-i18n="svc6_t">Coffre privé</h3>
                                 <span class="fxr-go"><svg width="18" height="18">
                                         <use href="#fx-arrow"/>
                                     </svg></span>
                                 <div class="fxr-detail">
-                                    <p data-i18n="svc4_p">Une gamme d'outils élémentaires de retouches photos et de montage vidéo.</p>
+                                    <p data-i18n="svc6_p">Un coffre privé, avec code de déverrouillage, pour ranger vos photos les plus confidentielles — avec création de sous-dossiers. Petit bonus : il possède aussi sa propre arborescence de tags.</p>
                                 </div>
                             </li>
                             <li tabindex="0">
                                 <span class="fxr-n">05</span>
+                                <span class="fxr-ic"><svg width="20" height="20">
+                                        <use href="#fx-cal"/>
+                                    </svg></span>
+                                <h3 class="fxr-t" data-i18n="svc7_t">Recherche par date</h3>
+                                <span class="fxr-go"><svg width="18" height="18">
+                                        <use href="#fx-arrow"/>
+                                    </svg></span>
+                                <div class="fxr-detail">
+                                    <p data-i18n="svc7_p">Un calendrier pour retrouver vos photos par année et par mois, d'après leur vraie date de prise de vue — celle que l'appareil a gravée dans le fichier.</p>
+                                </div>
+                            </li>
+                            <li tabindex="0">
+                                <span class="fxr-n">06</span>
                                 <span class="fxr-ic"><svg width="20" height="20">
                                         <use href="#fx-tag"/>
                                     </svg></span>
@@ -868,16 +886,16 @@
                                 </div>
                             </li>
                             <li tabindex="0">
-                                <span class="fxr-n">06</span>
+                                <span class="fxr-n">07</span>
                                 <span class="fxr-ic"><svg width="20" height="20">
-                                        <use href="#fx-lock"/>
+                                        <use href="#fx-sliders"/>
                                     </svg></span>
-                                <h3 class="fxr-t" data-i18n="svc6_t">Coffre privé</h3>
+                                <h3 class="fxr-t" data-i18n="svc4_t">Retouche photo et vidéo</h3>
                                 <span class="fxr-go"><svg width="18" height="18">
                                         <use href="#fx-arrow"/>
                                     </svg></span>
                                 <div class="fxr-detail">
-                                    <p data-i18n="svc6_p">Un coffre privé, avec code de déverrouillage, pour ranger vos photos les plus confidentielles — avec création de sous-dossiers. Petit bonus : il possède aussi sa propre arborescence de tags.</p>
+                                    <p data-i18n="svc4_p">Une gamme d'outils élémentaires de retouches photos et de montage vidéo.</p>
                                 </div>
                             </li>
                         </ol>
@@ -1176,6 +1194,6 @@
   });
 })();
 </script>
-        <script src="site.js?v=202608231731"></script>
+        <script src="site.js?v=202610261200"></script>
     </body>
 </html>

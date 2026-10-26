@@ -2316,9 +2316,11 @@ html.js-reveal .reveal.in {
         align-items: center;
     }
 
+    /* 48px : les pastilles du manège débordent de ~23px AU-DESSUS de la
+       scène (posées sur la photo, centrée) → ~25px d'encre à encre sous la carte */
     #features .tagscene {
         width: 100%;
-        margin: 24px 0 0 !important;
+        margin: 48px 0 0 !important;
     }
 
     /* le manège : hauteur réduite, sans le décalage négatif du grand écran */
@@ -2597,6 +2599,11 @@ html.js-reveal .reveal.in {
 
     .footer h5 {
         margin-bottom: 18px;
+    }
+
+    /* le titre « Plan » est aligné à gauche sur grand écran : on le recentre */
+    .footer .f-col-plan h5 {
+        text-align: center;
     }
 
     /* liens du plan : 2 colonnes nettes, centrées, rangées alignées */
