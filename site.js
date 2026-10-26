@@ -23,7 +23,13 @@
       hero_eyebrow: 'Advanced photo & video tagging',
       hero_title: 'Your memories,<br />to <em>cherish</em>.',
       hero_lead: "You let thousands of photos & videos pile up in a heap. <br class='br-lg' />Turn them into a living library and find any photo in the blink of an eye.<br />The app that finally frees your memories from oblivion.",
-      compat_label: 'Works with',
+      compat_label: 'Tags compatible with',
+      promo_btn: 'Use a gift code to get <br />the Premium version for FREE',
+      promo_left_pre: 'Still',
+      promo_left: 'codes available',
+      promo_step1: 'Use the Google Play link below.',
+      promo_step2: 'In the app, tap “Go Premium”: your promo code will appear right there.',
+      promo_step3: 'Zero ads, zero subscription, 100% privacy. Start sorting your media!',
       badge_small: 'Get it on', hero_secondary: 'See the app',
       hero_note: "4.8 — \u201CI can finally find my kids' photos\u201D",
       phone_micro: '5,064 images · 3 sources', phone_micro2: '12 albums · 5,064 images', phone_title: 'Active Sources',
@@ -86,7 +92,7 @@
       xmp_m3_p: 'Rename all your exports in one go from a template — sequence, date, dimensions… Your shots arrive already cleanly named.',
       price_eyebrow: 'Launch offer', price_title: 'A lifetime license for true peace of mind',
       price_lead: 'No subscription, never any ads, and an absurdly low price for the first wave of curious early birds.',
-      plan1_t: 'Freemium', plan1_tag: 'Tag for free', plan1_price: '$0', plan1_per: '',
+      plan1_t: 'Freemium', plan1_tag: 'Tag for free', plan1_price: '$0', plan1_per: 'forever',
       plan1_f1: 'All features WITHOUT ads', plan1_f2: 'Unlimited in time', plan1_f3: 'Limit of 10 tags', plan1_f4: 'Limit of 5 files per export', plan1_cta: 'Download',
       plan2_flag: 'Launch offer', plan2_t: 'Premium', plan2_tag: 'Unlimited tag collections', plan2_price: '$5.49', plan2_per: 'forever',
       plan2_f1: 'All features', plan2_f2: 'Lifetime license', plan2_f3: 'Free updates', plan2_f4: 'Zero ads', plan2_cta: 'Download',
@@ -263,10 +269,22 @@
   }
 
   /* ---------------------------------------------------- apply language */
-  let currentLang = localStorage.getItem('lt_lang') || 'fr';
-  function applyLang(lang) {
+  // Langue : choix explicite du visiteur (bouton FR/EN), sinon langue
+  // principale du navigateur — français pour un francophone, anglais pour
+  // tous les autres. Seul un clic enregistre un choix (clé distincte de
+  // l'ancienne 'lt_lang', qui figeait le français dès la première visite).
+  function storedLang() {
+    try { return localStorage.getItem('lt_lang_choice'); } catch (e) { return null; }
+  }
+  function browserLang() {
+    const first = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+    return first.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+  }
+  let currentLang = storedLang() || browserLang();
+  if (!I18N[currentLang]) currentLang = 'en';
+  function applyLang(lang, remember) {
     currentLang = lang;
-    localStorage.setItem('lt_lang', lang);
+    if (remember) { try { localStorage.setItem('lt_lang_choice', lang); } catch (e) {} }
     const L = I18N[lang];
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-i18n]').forEach((el) => {
@@ -301,7 +319,7 @@
     }
 
     document.querySelectorAll('.lang-toggle button').forEach((b) =>
-      b.addEventListener('click', () => applyLang(b.getAttribute('data-lang'))));
+      b.addEventListener('click', () => applyLang(b.getAttribute('data-lang'), true)));
   }
 
   /* ---------------------------------------------------- reveal on scroll */
@@ -534,6 +552,32 @@
     });
   }
 
+  /* ---------------------------------------------------- offre « Premium offert » */
+  // Interrupteur : rester à false tant que la version de l'app qui lit
+  // l'étiquette du bouton (0.9.6.2) n'est pas publiée sur le Play Store.
+  const PROMO_LIVE = false;
+  const PROMO_STATS = 'https://libertag-promo.michaelhalimi73.workers.dev/stats';
+  function initPromo() {
+    const box = document.getElementById('promo');
+    // Aperçu privé : libertag.app/?apercu=promo montre le bloc avant l'ouverture officielle.
+    const preview = /[?&]apercu=promo\b/.test(location.search);
+    if (!box || !(PROMO_LIVE || preview)) return;
+    const btn = document.getElementById('promoBtn');
+    const panel = document.getElementById('promoPanel');
+    const setOpen = (open) => { panel.hidden = !open; btn.setAttribute('aria-expanded', String(open)); };
+    btn.addEventListener('click', () => setOpen(panel.hidden));
+    document.addEventListener('click', (e) => { if (!box.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    fetch(PROMO_STATS)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!d || !(d.available > 0)) return;   // guichet muet ou épuisé : rien n'apparaît
+        document.getElementById('promoLeft').textContent = d.available;
+        box.hidden = false;
+      })
+      .catch(() => {});
+  }
+
   /* ---------------------------------------------------- boot */
   function boot() {
     initNav();
@@ -542,6 +586,7 @@
     initReveal();
     initTagScene();
     initFeatureRows();
+    initPromo();
     applyFixedLayout();
     window.addEventListener('resize', applyFixedLayout);
     window.addEventListener('load', applyFixedLayout);

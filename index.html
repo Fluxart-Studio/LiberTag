@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"/>
-        <link rel="stylesheet" href="site.css?v=202610261300"/>
+        <link rel="stylesheet" href="site.css?v=202610261830"/>
         <link id="gfont-Fira-Sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&amp;display=swap">
     </head>
     <body>
@@ -245,6 +245,26 @@
                         <p class="eyebrow"><span data-i18n="hero_eyebrow">Étiquetage photo &amp; vidéo avancé</span></p>
                         <h1 class="display" data-i18n-html="hero_title">Vos souvenirs,<br/>à <em>chérir</em>.</h1>
                         <p class="lead" data-i18n-html="hero_lead" style="margin: -10px 0px 36px;">Vous entassez des milliers de photos &amp; vidéos en vrac. <br class="br-lg"/>Faites-en une bibliothèque vivante et retrouvez chaque photo en un clin d&apos;oeil.<br>L&apos;application qui libère enfin vos souvenirs de l&apos;oubli.</p>
+                        <!-- Offre « Premium offert » : seul le bouton Play du menu porte l'étiquette de parrainage.
+                             Masqué tant que site.js ne l'a pas activé (PROMO_LIVE) et que le guichet n'a pas répondu. -->
+                        <div class="promo" id="promo" hidden>
+                            <div class="promo-drop">
+                                <p class="promo-count"><span data-i18n="promo_left_pre">Encore</span> <b id="promoLeft">500</b> <span data-i18n="promo_left">codes disponibles</span></p>
+                                <button type="button" class="promo-btn" id="promoBtn" aria-expanded="false" aria-controls="promoPanel"><span data-i18n-html="promo_btn">Profitez d&apos;un code-cadeau pour bénéficier <br/>de la version Premium GRATUITEMENT</span> <span class="promo-caret" aria-hidden="true">▾</span></button>
+                                <div class="promo-panel" id="promoPanel" hidden>
+                                    <ol class="promo-steps">
+                                        <li data-i18n="promo_step1">Utilisez le lien Google Play ci-dessous.</li>
+                                        <li data-i18n="promo_step2">Dans l&apos;app, touchez « Passer en Premium » : votre code promo s&apos;y affichera directement.</li>
+                                        <li data-i18n="promo_step3">Zéro pub, zéro abonnement, confidentialité à 100 %. Commencez à classer vos médias !</li>
+                                    </ol>
+                                    <div class="promo-play">
+                                        <a href="https://play.google.com/store/apps/details?id=com.libertag.myapp&amp;referrer=utm_source%3Dlibertag.app%26utm_medium%3Dsite%26utm_campaign%3Dpremium_offert" class="play-badge" target="_blank" rel="noopener"> <svg class="glyph">
+                                                <use href="#ic-play"/>
+                                            </svg> <span class="pb-text"><span class="pb-small" data-i18n="badge_small">Disponible sur</span><span class="pb-big">Google Play</span></span> </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="compat">
                             <p class="compat-label" data-i18n="compat_label">Étiquettes compatibles avec</p>
                             <div class="compat-rows">
@@ -1194,6 +1214,6 @@
   });
 })();
 </script>
-        <script src="site.js?v=202610261300"></script>
+        <script src="site.js?v=202610261800"></script>
     </body>
 </html>
