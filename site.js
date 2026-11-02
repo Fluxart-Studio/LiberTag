@@ -28,7 +28,7 @@
       promo_left_pre: 'Still',
       promo_left: 'codes available',
       promo_step1: 'Use the Google Play link below.',
-      promo_step2: 'In the app, tap “Go Premium”: your promo code will appear right there.',
+      promo_step2: 'In the app, tap “Go Premium”: your promo code will appear right there. Google Play will then confirm a €0 purchase: that is your gift code, you will not be charged anything.',
       promo_step3: 'Zero ads, zero subscription, 100% privacy. Start sorting your media!',
       badge_small: 'Get it on', hero_secondary: 'See the app',
       hero_note: "4.8 — \u201CI can finally find my kids' photos\u201D",
