@@ -556,7 +556,7 @@
   /* ---------------------------------------------------- offre « Premium offert » */
   // Interrupteur : rester à false tant que la version de l'app qui lit
   // l'étiquette du bouton (0.9.6.2) n'est pas publiée sur le Play Store.
-  const PROMO_LIVE = false;
+  const PROMO_LIVE = true;
   const PROMO_STATS = 'https://libertag-promo.michaelhalimi73.workers.dev/stats';
   function initPromo() {
     const box = document.getElementById('promo');
